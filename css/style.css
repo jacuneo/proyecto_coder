@@ -100,7 +100,6 @@ footer nav {
   border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
 
 .main-text h1 {
-  font-family: 'Oswald', sans-serif;
   font-size: 1.8rem; }
 
 .main-text p {
@@ -186,8 +185,7 @@ footer nav {
 
 .galeria-h1 {
   text-align: center;
-  margin: 2rem 0;
-  font-family: 'Oswald', sans-serif; }
+  margin: 2rem 0; }
 
 /* Contacto */
 input {
@@ -660,19 +658,14 @@ textarea:focus {
     line-height: 40px;
     font-family: 'DM Sans', sans-serif; }
   /* Footer para >600px */
-  footer {
-    grid-area: "footer"; }
   .footer {
     padding: 40px 25px;
     font-size: 1.5rem;
     justify-content: space-around;
     align-items: center; }
-  .footer-img {
-    margin-left: 40px; }
   .footer-links {
     display: flex;
-    justify-content: between;
-    margin-top: 20px; }
+    justify-content: between; }
   .footer-menu li {
     padding: 0 1rem; }
   .footer-social a {

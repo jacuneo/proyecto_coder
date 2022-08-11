@@ -304,9 +304,6 @@ label {
 }
 
 /* Footer para >600px */
-footer {
-    grid-area: "footer";
-}
 
 .footer {
     padding: 40px 25px;
@@ -315,14 +312,10 @@ footer {
     align-items: center;
 }
 
-.footer-img {
-    margin-left: 40px;
-}
-
 .footer-links {
     display:flex;
     justify-content: between;
-    margin-top: 20px;
+    
 }
 
 .footer-menu li {
