@@ -7,20 +7,28 @@
     text-decoration-style: none;
     color: #000000;
 }
-/* Estilos generales del sitio */
+
 body{
     background-image: url(../img/4853433.jpg);
     background-size: contain;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+}
+
+p {
+    font-family: 'DM Sans', sans-serif;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid gray;   
-}
-
-.header-ul {
-    display:flex;
 }
 
 header nav li {
@@ -94,18 +102,25 @@ footer nav li:hover {
     transform: scale(1.5,1.5);
 }
 
-/* Estilos generales del Index  */
+footer ul {
+    display: flex;
+}
 
+footer nav {
+    display: flex;
+}
+
+/* Estilos generales del Index  */
 .main-info {
     display: flex;
     background-image: url(../img/top-view-of-desk-top-with-notebook-and-scissors.jpg);
     justify-content: center;
+    text-align: center;
 }
 
 .main-text {
     display: flex;
     flex-direction: column;
-    text-align: center;
     border: 4px solid;
     border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
 }
@@ -116,14 +131,12 @@ footer nav li:hover {
 }
 
 .main-text p {
-    font-family: 'DM Sans', sans-serif;
     margin: 1%;
 }
 
 .cards {
     display:flex;
-    justify-content: center;
-    align-items: center;
+    place-content: center;
 }
 
 .carta {
@@ -134,14 +147,6 @@ footer nav li:hover {
     border: 4px solid;
     padding: 1rem;
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
-}
-
-.carta__titulo {
-    font-family: 'Oswald', sans-serif;
-}
-
-.carta__texto {
-    font-family: 'DM Sans', sans-serif;
 }
 
 .carta__img {
@@ -158,21 +163,18 @@ footer nav li:hover {
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
 }
 
+.feedback-card {
+    display:flex;
+    flex-direction: column;
+}
+
 .feedback-opiniones {
     display: flex;
 }
 
 .feedback-h2 {
-    font-family: 'Oswald', sans-serif;
-    padding-bottom: 14px;
+    padding-bottom: .5rem;
 }
-
-.feedback-card {
-    display:flex;
-    flex-direction: column;
-    font-family: 'DM Sans', sans-serif;
-}
-
 
 /* Estilo general de Nosotros */
 
@@ -186,32 +188,17 @@ footer nav li:hover {
 }
 
 .nosotros-info h1 {
-    font-family: 'Oswald', sans-serif;
     margin-bottom: 14px;
-}
-
-.nosotros-info p {
-    font-family: 'DM Sans', sans-serif;
-}
-
-.ubicacion-info {
-    font-family: 'DM Sans', sans-serif;
 }
 
 .ubicacion-info h2 {
-    font-family: 'Oswald', sans-serif;
-    margin-bottom: 14px;
-}
-
-.ubicacion-info p {
-    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 1rem;
 }
 
 /* Producto */
 .productos-h1 {
     display: flex;
     text-align: center;
-    font-family: 'Oswald', sans-serif;
 }
 
 #prod-img {
@@ -235,18 +222,6 @@ footer nav li:hover {
     object-fit:cover;
 }
 
- .galeria-h1 {
-    text-align: center;
-    margin: 2rem 0;
-    font-family: 'Oswald', sans-serif;
-}
-
-.item-img {
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-}
-
 .galeria__item-animation {
     transition: ease-in-out 1.5s;
     filter: grayscale(100%);
@@ -255,6 +230,12 @@ footer nav li:hover {
 .galeria__item-animation:hover {
     transform: scale(1.2);
     filter: grayscale(0);
+}
+
+ .galeria-h1 {
+    text-align: center;
+    margin: 2rem 0;
+    font-family: 'Oswald', sans-serif;
 }
 
 /* Contacto */
@@ -286,20 +267,6 @@ textarea:focus {
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;    
 }
 
-.formulario button {
-    padding: 1rem;
-    border-bottom: 3px solid white;
-    border-right: 3px solid rgb(189, 186, 186);
-    border-radius: 1,5%;
-}
-
-.formulario button:hover{
-    font-weight: bolder;
-    border: 2px solid;
-    padding: 1rem;
-    border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
-}
-
 .contacto-cards-item {
     display:flex;
     flex-direction:column;
@@ -309,17 +276,4 @@ textarea:focus {
     padding: 1rem;
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
     background-image: linear-gradient(rgb(244, 244, 234), rgb(224, 244, 224));
-}
-
-/* Estilo general del Footer */
-.footer-social {
-    display: flex;
-}
-
-footer ul {
-    display: flex;
-}
-
-footer nav {
-    display: flex;
 }
