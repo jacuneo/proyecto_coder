@@ -28,87 +28,51 @@ p {
 header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid gray;   
+    border-bottom: 1px solid gray;  
+
+    ul {
+        display:flex;
+    }
+
+    nav li {
+        transition:all .6s;
+    }
+
+    nav li:hover {
+        background-color:turquoise;
+        color: greenyellow;
+        transform: scale(1.1,1.1);
+    }
+
+    img {
+        transition: all .5s;
+    }
+
+    img:hover {
+        transform: rotate(-7deg);
+    }
+
+    .nav-link {
+        color:black;
+    }
+
+    li {
+        font-family: 'DM Sans', sans-serif;
+        text-decoration: none;
+        color:black;
+    }
+
+    a {
+        color:black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color:black;
+        text-decoration: none;
+    }
 }
 
-header nav li {
-    transition:all .6s;
-}
-
-header nav li:hover {
-    background-color:turquoise;
-    color: greenyellow;
-    transform: scale(1.1,1.1);
-}
-
-header img {
-    transition: all .5s;
-}
-
-header img:hover {
-    transform: rotate(-7deg);
-}
-
-ul {
-    display:flex;
-}
-
-li {
-    font-family: 'DM Sans', sans-serif;
-    text-decoration: none;
-    color:black;
-}
-
-a {
-    color:black;
-    text-decoration: none;
-}
-
-a:hover {
-    color:black;
-    text-decoration: none;
-}
-
-.nav-link {
-    color:black;
-}
-
-footer {
-    display: flex;
-    grid-area: "footer"
-}
-
-footer nav li:hover {
-    background-color:turquoise;
-}
-
-.footer img {
-    transition:all .5s;
-}
-
-.footer img:hover {
-    transform: rotate(-7deg);
-}
-
-.footer-social {
-    display: flex;
-}
-
-.footer-social img {
-    transition:all .7s;
-}
-
-.footer-social img:hover {
-    transform: scale(1.5,1.5);
-}
-
-footer ul {
-    display: flex;
-}
-
-footer nav {
-    display: flex;
-}
 
 /* Estilos generales del Index  */
 .main-info {
@@ -123,33 +87,38 @@ footer nav {
     flex-direction: column;
     border: 4px solid;
     border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
-}
 
-.main-text h1 {
-    font-size: 1.8rem;
-}
+    h1 {
+        font-size: 1.8rem;
+    }
 
-.main-text p {
-    margin: 1%;
+    p {
+        margin: 1%;
+    }
 }
 
 .cards {
     display:flex;
     place-content: center;
-}
 
-.carta {
-    display:flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    text-align: center;
-    border: 4px solid;
-    padding: 1rem;
-    border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
-}
+    .carta {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        border: 4px solid;
+        padding: 1rem;
+        border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
 
-.carta__img {
-    height: 70%;
+        &__img {
+            width:40%;
+        }
+    
+        &__texto {
+            padding: 3%;
+        }
+    }
 }
 
 /* Index - Feedback */
@@ -160,19 +129,19 @@ footer nav {
     padding: 1rem;
     border: 4px solid;
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
-}
 
-.feedback-card {
-    display:flex;
-    flex-direction: column;
-}
+    .feedback-h2 {
+        padding-bottom: .5rem;
+    }
 
-.feedback-opiniones {
-    display: flex;
-}
-
-.feedback-h2 {
-    padding-bottom: .5rem;
+    .feedback-opiniones {
+        display: flex;
+        
+        .feedback-card {
+            display:flex;
+            flex-direction: column;
+        }
+    }
 }
 
 /* Estilo general de Nosotros */
@@ -184,14 +153,14 @@ footer nav {
 .nosotros-info {
     display: flex;
     flex-direction: column;
-}
 
-.nosotros-info h1 {
-    margin-bottom: 14px;
-}
-
-.ubicacion-info h2 {
-    margin-bottom: 1rem;
+    h1 {
+        margin-bottom: 14px;
+    }
+    
+    h2 {
+        margin-bottom: 1rem;
+    }
 }
 
 /* Producto */
@@ -211,58 +180,57 @@ footer nav {
 
 /* Estilo de la galeria */
 
-.galeria {
-    display: grid;
-}
-
-.galeria__item-animation{
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-}
-
-.galeria__item-animation {
-    transition: ease-in-out 1.5s;
-    filter: grayscale(100%);
-}
-
-.galeria__item-animation:hover {
-    transform: scale(1.2);
-    filter: grayscale(0);
-}
-
- .galeria-h1 {
+.galeria-h1 {
     text-align: center;
     margin: 2rem 0;
 }
 
-/* Contacto */
-input {
-    transition:all .2s;
+.galeria {
+    display: grid;
+
+    &__item-animation{
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        transition: ease-in-out 1.5s;
+        filter: grayscale(100%);
+    }
+    
+    &__item-animation:hover {
+        transform: scale(1.2);
+        filter: grayscale(0);
+    }
 }
 
-input:hover {
+/* Contacto */
+form {
+    input {
+    transition:all .2s;
+    }
+
+    input:hover {
     background-color: rgb(244, 246, 239);
     border:2px solid black;
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
-}
+    }
 
-input:focus {
+    input:focus {
     background-color: rgb(244, 246, 239);
     border:4px solid;
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
-}
+    }
 
-textarea:hover {
+    textarea:hover {
     background-color: rgb(244, 246, 239);
     border:2px solid black;
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
-}
+    }
 
-textarea:focus {
+    textarea:focus {
     background-color: rgb(244, 246, 239);
     border: 4px solid black;
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;    
+    }
 }
 
 .contacto-cards-item {
@@ -274,4 +242,57 @@ textarea:focus {
     padding: 1rem;
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
     background-image: linear-gradient(rgb(244, 244, 234), rgb(224, 244, 224));
+}
+
+footer {
+    display: flex;
+    grid-area: "footer";
+
+    nav {
+        display: flex;
+
+        ul {
+            display: flex;
+        }
+
+        li {
+        font-family: 'DM Sans', sans-serif;
+        text-decoration: none;
+        color:black;
+        }
+
+        li:hover {
+            background-color:turquoise;
+        }
+    }
+
+    a {
+        color:black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color:black;
+        text-decoration: none;
+    }
+
+    img {
+        transition:all .5s;
+    }
+    
+    img:hover {
+        transform: rotate(-7deg);
+    }
+
+    .footer-social {
+        display: flex;
+    
+        img {
+            transition:all .7s;
+        }
+
+        img:hover {
+            transform: scale(1.5,1.5);
+        }
+    }
 }
