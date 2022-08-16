@@ -183,7 +183,7 @@
         justify-content: center;
         text-align: center;
         margin: 2rem 0;
-        font-family: 'Oswald', sans-serif;
+        font-family: $fuente_uno;
     }
 
     .dibujo-img {
@@ -248,7 +248,7 @@
 .contacto-h1 {
     grid-area: "titulo-medios";
     text-align: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: $fuente_uno;
 }
 
 .contacto-cards {
@@ -273,7 +273,7 @@
 .form-h2 {
     grid-area: "titulo-form";
     text-align: center;
-    font-family: 'Oswald', sans-serif;
+    font-family: $fuente_uno;
 }
 
 /* Estilo del formulario para < 600px */
@@ -291,7 +291,7 @@
 
 .formulario input {
     margin-bottom: .5rem;
-    font-family: 'DM Sans', sans-serif;
+    font-family: $fuente_dos;
 }
 
 .formulario button {
@@ -304,7 +304,7 @@
 
 label {
     line-height: 40px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: $fuente_dos;
 }
 
 /* Footer para < 600px */
