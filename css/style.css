@@ -26,6 +26,22 @@ header {
   border-bottom: 1px solid gray; }
   header ul {
     display: flex; }
+  header li {
+    font-family: 'DM Sans', sans-serif;
+    text-decoration: none;
+    color: black; }
+  header a {
+    color: black;
+    text-decoration: none; }
+  header a:hover {
+    color: black;
+    text-decoration: none; }
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+    padding: 0 15px; }
   header nav li {
     transition: all .6s; }
   header nav li:hover {
@@ -38,16 +54,6 @@ header {
     transform: rotate(-7deg); }
   header .nav-link {
     color: black; }
-  header li {
-    font-family: 'DM Sans', sans-serif;
-    text-decoration: none;
-    color: black; }
-  header a {
-    color: black;
-    text-decoration: none; }
-  header a:hover {
-    color: black;
-    text-decoration: none; }
 
 /* Estilos generales del Index  */
 .main-info {
@@ -491,12 +497,6 @@ footer {
       border-radius: 5px;
       padding: 0 .3rem;
       box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px; }
-    header nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      gap: 2rem;
-      padding: 0 15px; }
     header .nav-img {
       margin-left: 40px; }
     header .header-ul {
