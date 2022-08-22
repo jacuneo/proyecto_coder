@@ -25,13 +25,19 @@ p {
 header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid gray;  
+    border-bottom: 1px solid gray;
+    grid-area: header;  
 
     ul {
         display:flex;
     }
 
-    li,
+    li {
+        color:black;
+        text-decoration: none;
+        padding:.5rem;
+    }
+
     a,
     a:hover {
         color:black;
@@ -66,18 +72,24 @@ header {
 
     .nav-link {
         color:black;
-    }
-
-   
+    } 
 }
 
 
 /* Estilos generales del Index  */
+main {
+    grid-area: main;
+}
+
 .main-info {
     display: flex;
     background-image: url(../img/top-view-of-desk-top-with-notebook-and-scissors.jpg);
     justify-content: center;
     text-align: center;
+    grid-area: zona1;
+    place-items: center;
+    background-size: cover;
+    padding: 1em 0;
 }
 
 .main-text {
@@ -85,6 +97,8 @@ header {
     flex-direction: column;
     border: 4px solid;
     border-image: $borde_uno;
+    width: 70%;
+    padding: 7%;
 
     h1 {
         font-size: 1.8rem;
@@ -98,6 +112,10 @@ header {
 .cards {
     display:flex;
     place-content: center;
+    grid-area: zona2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 
     .carta {
         display:flex;
@@ -108,9 +126,12 @@ header {
         border: 4px solid;
         padding: 1em;
         border-image: $borde_uno;
+        height: 30%;
+        width: 70%;
 
         &__img {
             width:40%;
+            height: 40%;
         }
     
         &__texto {
@@ -124,25 +145,46 @@ header {
     display: flex;
     flex-direction: column;
     text-align:center;
-    padding: 1em;
     border: 4px solid;
     border-image: $borde_uno;
+    grid-area: zona3;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    margin: 1em auto;
 
     .feedback-h2 {
-        padding-bottom: .5em;
+        padding: 1em 0 .5em;
     }
 
     .feedback-opiniones {
         display: flex;
+        flex-direction:column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10%;
+        text-align: center;
         
         .feedback-card {
             display:flex;
             flex-direction: column;
+            width: 70%;
+            gap:1rem;
+            padding: 15px;
         }
     }
 }
 
 /* Estilo general de Nosotros */
+.banner {
+    grid-area: zona1;
+    width:100%;
+    height: 150px;
+    background-image: url(../img/concept-or-composition-of-hygge-with-different-accessories.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
 .nosotros-main {
     display: flex;
@@ -151,6 +193,11 @@ header {
 .nosotros-info {
     display: flex;
     flex-direction: column;
+    grid-area: zona2;
+    width: 85%;
+    border: 4px solid;
+    padding: 1rem;
+    border-image: $borde_uno;
 
     h1 {
         margin-bottom: 1.1em;
@@ -161,23 +208,84 @@ header {
     }
 }
 
-/* Producto */
-.productos-h1 {
-    display: flex;
-    text-align: center;
-}
-
-#prod-img {
-    transition:all 0.5s;
-}
-
-#prod-img:hover {
-    border: 8px solid white;
+.ubicacion-info {
+    grid-area: zona3;
+    width: 85%;
+    border: 4px solid;
+    padding: 1rem;
     border-image: $borde_uno;
 }
 
-/* Estilo de la galeria */
+.ubicacion-map {
+    grid-area: zona4;
+    width: 90%;
+    height: 80%;
+    offset-block-end: 15px;
+}
 
+/* Producto */
+.productos-h1 {
+    grid-area: zona1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 2em 0;
+    font-family: $fuente_uno;
+}
+
+.dibujo {
+    grid-area: zona2;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 70%;
+    gap: 1.5em;
+}
+
+.producto__item {
+    
+    &__img {
+        width:100%;
+        transition:all 1s;
+    }
+    
+    &__img:hover {
+        border: 8px solid white;
+        border-image: $borde_uno; 
+    }
+}
+
+.dibujo-info {
+    grid-area: zona3;
+}
+
+.inspiradores {
+    grid-area: zona4;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    gap: 1.5em;    
+}
+
+.inspiradores-info {
+    grid-area: zona5;
+}
+
+.anotadores {
+    grid-area: zona6;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    gap: 1.5em;
+}
+
+.anotadores-info {
+    grid-area: zona7;
+}
+
+/* Estilo de la galeria */
 .galeria-h1 {
     text-align: center;
     margin: 1em 0;
@@ -185,6 +293,19 @@ header {
 
 .galeria {
     display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+
+    &__item {
+        max-width:70%;
+        margin: 1em ;
+        overflow: hidden;
+    }
+
+    &__item:hover {
+        border: 8px solid white;
+        border-image: $borde_uno;
+    }
 
     &__item-animation{
         width: 100%;
@@ -197,10 +318,55 @@ header {
     &__item-animation:hover {
         transform: scale(1.2);
         filter: grayscale(0);
+        
     }
 }
 
 /* Contacto */
+
+.contacto-h1 {
+    grid-area: titulo-medios;
+    text-align: center;
+    font-family: $fuente_uno;
+}
+
+.form-h2 {
+    grid-area: titulo-form;
+    text-align: center;
+    font-family: $fuente_uno;
+}
+
+.contenedor-formulario {
+    grid-area: formulario;
+    justify-self: center;
+    width: 70%;
+    margin-top: 10%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario input {
+    margin-bottom: .5rem;
+    font-family: $fuente_dos;
+}
+
+.formulario button {
+    margin: 1rem;
+    padding: 1rem;
+    border-bottom: 3px solid white;
+    border-right: 3px solid rgb(189, 186, 186);
+    border-radius: 1,5%;
+}
+
+label {
+    line-height: 40px;
+    font-family: $fuente_dos;
+}
+
+
 form {
     input {
     transition:all .2s;
@@ -231,6 +397,15 @@ form {
     }
 }
 
+.contacto-cards {
+    grid-area: medios;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .contacto-cards-item {
     display:flex;
     flex-direction:column;
@@ -240,17 +415,32 @@ form {
     padding: 1em;
     border-image: $borde_uno;
     background-image: linear-gradient(rgb(244, 244, 234), rgb(224, 244, 224));
+    height: 27%;
+    width: 80%;
 }
+
+.contacto-cards-img {
+    height: 30%;
+}
+
 
 footer {
     display: flex;
-    grid-area: "footer";
+    grid-area: footer;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top:5%;
+    margin-bottom: 50px;
 
     nav {
         display: flex;
 
         ul {
             display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: .5rem;
         }
 
         li {
@@ -279,6 +469,8 @@ footer {
 
     .footer-social {
         display: flex;
+        justify-content:space-between; 
+        width: 25%;
     
         img {
             transition:all .7s;

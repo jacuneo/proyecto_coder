@@ -1,4 +1,8 @@
 @media only screen and (min-width: 600px) {
+    #grilla {
+        grid-template-rows: 450px 450px 450px;
+    }
+    
     #layout-container {
         grid-template-rows:  150px 1400px 200px;
     }
@@ -14,17 +18,6 @@
 
     #layout-galeria {
         grid-template-rows: 150px auto 200px;
-    }
-
-    #grilla {
-        height: auto;
-        grid-template-columns: auto;
-        grid-template-rows: 450px 450px 450px;
-        grid-template-areas: "zona1"
-                             "zona2"
-                             "zona3";
-        align-content: space-evenly;
-        justify-content: center;
     }
 
     #nos-grilla {
@@ -48,12 +41,10 @@
                              "medios"
                              "titulo-form"
                              "formulario";
-        text-align: center;
-        place-items: center;
     }
 
     header {
-        grid-area: "header";
+        grid-area: header;
 
         li {
             margin:0 1.5rem;
@@ -62,8 +53,6 @@
             padding:0 .3rem;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
         }
-
-        
 
         .nav-img {
             margin-left: 40px;
@@ -82,20 +71,19 @@
     /* Index para >600px */
     .main-info {
         place-items: center;
-        grid-area: "zona1";
+        grid-area: zona1;
         background-size: cover;
+
     }
 
     .main-text {
-        width: 35%;
-        height: 70%;
-        padding: 2%;
+        padding: 10%;
         backdrop-filter: blur(8px);
         justify-content: center;
     }
 
     .cards {
-        justify-content: space-evenly;
+        flex-direction: row;
 
         .carta {
             height: 90%;
@@ -104,18 +92,15 @@
     }
 
     .feedback {
-        grid-area: "zona3";
+        grid-area: zona3;
         margin:auto;
         width: 95%;
-        height: 70%;
-        gap:10%;
+        
 
         .feedback-opiniones {
-            justify-content: space-evenly;
-            gap: 10%;
+            flex-direction: row;
             
             .feedback-card {
-                flex-direction: column;
                 width: 35%;
             }
         }
@@ -123,7 +108,7 @@
 
     /* Nosotros*/
     .banner {
-        grid-area: "a1";
+        grid-area: a1;
         background-image: url(../img/flat-lay-notepad-template-with-tea-concept.jpg);
         width:90%;
         height: 90%;
@@ -132,17 +117,17 @@
     }
 
     .nosotros-info {
-        grid-area:"a2";
+        grid-area: a2;
         width: 80%;
     }
 
     .ubicacion-info {
-        grid-area:"b1";
+        grid-area:b1;
         width: 60%;
     }
 
     .ubicacion-map {
-        grid-area: "b2";
+        grid-area: b2;
         width: 90%;
         height: 70%;
     }
@@ -159,57 +144,30 @@
                          "zona5"
                          "zona6"
                          "zona7";
-    gap: 1.5rem;
-    align-items: center;
-    text-align: center;
-    place-items: center;
     }
 
-    #prod-img {
-    object-fit: cover;
-    padding: 1%;
+    .producto__item__img {
+        padding: 1%;
     }
 
-    .productos-h1 {
-    grid-area: "zona1";
-    margin: 2rem 0;
+    .dibujo {
+        flex-direction: row;
+        gap:6em;
+        justify-content: space-evenly;
+        width:80%;
     }
 
-    .dibujo-img {
-    grid-area: "zona2";
-    display: flex;
-    gap:10%;
-    justify-content: space-evenly;
-    width:80%;
-    }
+    .inspiradores {
+        flex-direction: row;
+        gap:6em;
+        justify-content: space-evenly;
+        width:80%;}
 
-    .dibujo-info {
-    grid-area: "zona3";
-    }
-
-    .inspiradores-img {
-    grid-area: "zona4";
-    display: flex;
-    gap:10%;
-    justify-content: space-evenly;
-    width:80%;
-    }
-
-    .inspiradores-info {
-    grid-area: "zona5";
-    }
-
-    .anotadores-img {
-    grid-area: "zona6";
-    display: flex;
-    gap:10%;
-    justify-content: space-evenly;
-    width:80%;
-    }
-
-    .anotadores-info {
-    grid-area: "zona7";
-    }
+    .anotadores {
+        flex-direction: row;
+        gap:6em;
+        justify-content: space-evenly;
+        width:80%;}
 
 /* Galeria para >600px */
 
@@ -221,22 +179,28 @@
     grid-template-columns:30% 30% 30%;
     grid-template-rows: 450px 240px 350px 400px 400px 400px 400px 260px;
     justify-content:center;
-    column-gap:30px;
-    row-gap: 30px;
+    column-gap: 2em;
+    row-gap: 2em;
     }
 
     .galeria__item {
     overflow: hidden;
-    }
+    max-width: 100%;
+    width: 100%;
+    max-height:100%;
+    height: 100%;
+    border: $borde_uno;
+  }
+    
 
 /* Contacto para > 600px */
     .contacto-h1 {
-    grid-area: "titulo-medios";
+    grid-area: titulo-medios;
     text-align: center;
     }
 
     .contacto-cards {
-    grid-area: "medios";
+    grid-area: medios;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -254,21 +218,20 @@
     }
 
     .form-h2 {
-    grid-area: "titulo-form";
+    grid-area: titulo-form;
     text-align: center;
     font-family: $fuente_uno;
     }
 
 /* Estilo del formulario para > 600px*/
     .contenedor-formulario {
-    grid-area: "formulario";
+    grid-area: formulario;
     justify-self: center;
     width: 50%;
     }
 
 /* Footer para >600px */
     footer {
-    padding: 40px 25px;
     font-size: 1.5rem;
     justify-content: space-around;
     align-items: center;

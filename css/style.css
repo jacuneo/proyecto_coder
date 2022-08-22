@@ -21,10 +21,14 @@ p {
 header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid gray; }
+  border-bottom: 1px solid gray;
+  grid-area: header; }
   header ul {
     display: flex; }
-  header li,
+  header li {
+    color: black;
+    text-decoration: none;
+    padding: .5rem; }
   header a,
   header a:hover {
     color: black;
@@ -49,17 +53,26 @@ header {
     color: black; }
 
 /* Estilos generales del Index  */
+main {
+  grid-area: main; }
+
 .main-info {
   display: flex;
   background-image: url(../img/top-view-of-desk-top-with-notebook-and-scissors.jpg);
   justify-content: center;
-  text-align: center; }
+  text-align: center;
+  grid-area: zona1;
+  place-items: center;
+  background-size: cover;
+  padding: 1em 0; }
 
 .main-text {
   display: flex;
   flex-direction: column;
   border: 4px solid;
-  border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
+  border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
+  width: 70%;
+  padding: 7%; }
   .main-text h1 {
     font-size: 1.8rem; }
   .main-text p {
@@ -67,7 +80,11 @@ header {
 
 .cards {
   display: flex;
-  place-content: center; }
+  place-content: center;
+  grid-area: zona2;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; }
   .cards .carta {
     display: flex;
     flex-direction: column;
@@ -76,9 +93,12 @@ header {
     text-align: center;
     border: 4px solid;
     padding: 1em;
-    border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
+    border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
+    height: 30%;
+    width: 70%; }
     .cards .carta__img {
-      width: 40%; }
+      width: 40%;
+      height: 40%; }
     .cards .carta__texto {
       padding: 3%; }
 
@@ -87,40 +107,117 @@ header {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 1em;
   border: 4px solid;
-  border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
+  border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
+  grid-area: zona3;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70%;
+  margin: 1em auto; }
   .feedback .feedback-h2 {
-    padding-bottom: .5em; }
+    padding: 1em 0 .5em; }
   .feedback .feedback-opiniones {
-    display: flex; }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10%;
+    text-align: center; }
     .feedback .feedback-opiniones .feedback-card {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      width: 70%;
+      gap: 1rem;
+      padding: 15px; }
 
 /* Estilo general de Nosotros */
+.banner {
+  grid-area: zona1;
+  width: 100%;
+  height: 150px;
+  background-image: url(../img/concept-or-composition-of-hygge-with-different-accessories.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
 .nosotros-main {
   display: flex; }
 
 .nosotros-info {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  grid-area: zona2;
+  width: 85%;
+  border: 4px solid;
+  padding: 1rem;
+  border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
   .nosotros-info h1 {
     margin-bottom: 1.1em; }
   .nosotros-info h2 {
     margin-bottom: 1em; }
 
+.ubicacion-info {
+  grid-area: zona3;
+  width: 85%;
+  border: 4px solid;
+  padding: 1rem;
+  border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
+
+.ubicacion-map {
+  grid-area: zona4;
+  width: 90%;
+  height: 80%;
+  offset-block-end: 15px; }
+
 /* Producto */
 .productos-h1 {
+  grid-area: zona1;
   display: flex;
-  text-align: center; }
+  justify-content: center;
+  text-align: center;
+  margin: 2em 0;
+  font-family: "Oswald", sans-serif; }
 
-#prod-img {
-  transition: all 0.5s; }
+.dibujo {
+  grid-area: zona2;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 70%;
+  gap: 1.5em; }
 
-#prod-img:hover {
+.producto__item__img {
+  width: 100%;
+  transition: all 1s; }
+
+.producto__item__img:hover {
   border: 8px solid white;
   border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
+
+.dibujo-info {
+  grid-area: zona3; }
+
+.inspiradores {
+  grid-area: zona4;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+  gap: 1.5em; }
+
+.inspiradores-info {
+  grid-area: zona5; }
+
+.anotadores {
+  grid-area: zona6;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+  gap: 1.5em; }
+
+.anotadores-info {
+  grid-area: zona7; }
 
 /* Estilo de la galeria */
 .galeria-h1 {
@@ -128,7 +225,16 @@ header {
   margin: 1em 0; }
 
 .galeria {
-  display: grid; }
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center; }
+  .galeria__item {
+    max-width: 70%;
+    margin: 1em;
+    overflow: hidden; }
+  .galeria__item:hover {
+    border: 8px solid white;
+    border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
   .galeria__item-animation {
     width: 100%;
     height: 100%;
@@ -140,6 +246,41 @@ header {
     filter: grayscale(0); }
 
 /* Contacto */
+.contacto-h1 {
+  grid-area: titulo-medios;
+  text-align: center;
+  font-family: "Oswald", sans-serif; }
+
+.form-h2 {
+  grid-area: titulo-form;
+  text-align: center;
+  font-family: "Oswald", sans-serif; }
+
+.contenedor-formulario {
+  grid-area: formulario;
+  justify-self: center;
+  width: 70%;
+  margin-top: 10%; }
+
+.formulario {
+  display: flex;
+  flex-direction: column; }
+
+.formulario input {
+  margin-bottom: .5rem;
+  font-family: "DM Sans", sans-serif; }
+
+.formulario button {
+  margin: 1rem;
+  padding: 1rem;
+  border-bottom: 3px solid white;
+  border-right: 3px solid #bdbaba;
+  border-radius: 1,5%; }
+
+label {
+  line-height: 40px;
+  font-family: "DM Sans", sans-serif; }
+
 form input {
   transition: all .2s; }
 
@@ -163,6 +304,14 @@ form textarea:focus {
   border: 4px solid black;
   border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
 
+.contacto-cards {
+  grid-area: medios;
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  justify-content: space-evenly;
+  align-items: center; }
+
 .contacto-cards-item {
   display: flex;
   flex-direction: column;
@@ -171,15 +320,28 @@ form textarea:focus {
   border: 4px solid;
   padding: 1em;
   border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
-  background-image: linear-gradient(#f4f4ea, #e0f4e0); }
+  background-image: linear-gradient(#f4f4ea, #e0f4e0);
+  height: 27%;
+  width: 80%; }
+
+.contacto-cards-img {
+  height: 30%; }
 
 footer {
   display: flex;
-  grid-area: "footer"; }
+  grid-area: footer;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 5%;
+  margin-bottom: 50px; }
   footer nav {
     display: flex; }
     footer nav ul {
-      display: flex; }
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      column-gap: .5rem; }
     footer nav li {
       text-decoration: none;
       color: black; }
@@ -194,258 +356,73 @@ footer {
   footer img:hover {
     transform: rotate(-7deg); }
   footer .footer-social {
-    display: flex; }
+    display: flex;
+    justify-content: space-between;
+    width: 25%; }
     footer .footer-social img {
       transition: all .7s; }
     footer .footer-social img:hover {
       transform: scale(1.5, 1.5); }
 
 #grilla {
-  display: grid; }
+  display: grid;
+  height: auto;
+  grid-template-columns: auto;
+  grid-template-areas: "zona1" "zona2" "zona3";
+  align-content: space-evenly;
+  justify-content: center; }
 
 #layout-container {
   display: grid;
-  grid-template-areas: "header" "main" "footer"; }
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: 100px auto 218px; }
 
 #layout-nos-container {
   display: grid;
-  grid-template-areas: "header" "main" "footer"; }
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: 100px auto 218px; }
 
 #layout-prod-container {
   display: grid;
-  grid-template-areas: "header" "main" "footer"; }
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: 100px auto 218px; }
 
 #layout-galeria {
   display: grid;
-  grid-template-areas: "header" "main" "footer"; }
+  grid-template-areas: "header" "main" "footer";
+  grid-template-columns: auto;
+  grid-template-rows: 100px auto 200px; }
 
 #nos-grilla {
-  display: grid; }
+  display: grid;
+  height: 1450px;
+  grid-template-columns: auto;
+  grid-template-rows: 150px 550px 300px 350px;
+  grid-template-areas: "zona1" "zona2" "zona3" "zona4";
+  gap: 2%;
+  place-items: center;
+  text-align: center; }
 
 #prod-grilla {
-  display: grid; }
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas: "zona1" "zona2" "zona3" "zona4" "zona5" "zona6" "zona7";
+  gap: 1.5em;
+  align-items: center;
+  text-align: center; }
 
 #contact-grilla {
-  display: grid; }
-
-/* media queries para pantallas < 600px */
-@media only screen and (max-width: 600px) {
-  #layout-container {
-    grid-template-rows: 100px auto 218px; }
-  #layout-nos-container {
-    grid-template-rows: 100px auto 218px; }
-  #layout-prod-container {
-    grid-template-rows: 100px auto 218px; }
-  #layout-galeria {
-    grid-template-columns: auto;
-    grid-template-rows: 100px auto 200px; }
-  #grilla {
-    height: auto;
-    grid-template-columns: auto;
-    grid-template-areas: "zona1" "zona2" "zona3";
-    align-content: space-evenly;
-    justify-content: center; }
-  #nos-grilla {
-    height: 1450px;
-    grid-template-columns: auto;
-    grid-template-rows: 150px 550px 300px 350px;
-    grid-template-areas: "zona1" "zona2" "zona3" "zona4";
-    gap: 2%;
-    place-items: center;
-    text-align: center; }
-  #prod-grilla {
-    grid-template-columns: auto;
-    grid-template-areas: "zona1" "zona2" "zona3" "zona4" "zona5" "zona6" "zona7";
-    gap: 1.5rem;
-    align-items: center;
-    text-align: center; }
-  #contact-grilla {
-    height: auto;
-    grid-template-columns: auto;
-    grid-template-rows: 50px 1100px 50px 700px;
-    grid-template-areas: "titulo-medios" "medios" "titulo-form" "formulario";
-    text-align: center;
-    justify-items: center; }
-  header {
-    grid-area: "header"; }
-  li {
-    padding: .5rem; }
-  main {
-    grid-area: "main"; }
-  /* Index para < 600px */
-  .main-info {
-    grid-area: "zona1";
-    place-items: center;
-    background-size: cover; }
-  .main-text {
-    width: 70%;
-    padding: 7%; }
-  .cards {
-    grid-area: "zona2";
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center; }
-  .carta {
-    height: 30%;
-    width: 70%; }
-  .carta__img {
-    height: 40%; }
-  .carta__texto {
-    padding: 3%; }
-  .feedback {
-    grid-area: "zona3";
-    justify-content: space-evenly;
-    align-items: center;
-    width: 70%;
-    margin: auto;
-    padding-top: 5%; }
-  .feedback-opiniones {
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 10%;
-    text-align: center; }
-  .feedback-card {
-    width: 70%;
-    gap: 1rem;
-    padding: 15px; }
-  /* nosotros para < 600px */
-  .banner {
-    grid-area: "zona1";
-    width: 100%;
-    height: 150px;
-    background-image: url(../img/concept-or-composition-of-hygge-with-different-accessories.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; }
-  .nosotros-info {
-    grid-area: "zona2";
-    width: 85%;
-    border: 4px solid;
-    padding: 1rem;
-    border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
-  .ubicacion-info {
-    grid-area: "zona3";
-    width: 85%;
-    border: 4px solid;
-    padding: 1rem;
-    border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
-  .ubicacion-map {
-    grid-area: "zona4";
-    width: 90%;
-    height: 80%;
-    offset-block-end: 15px; }
-  /* Productos para < 600px*/
-  #prod-img {
-    width: 100%;
-    height: 100%;
-    padding: 1%; }
-  .productos-h1 {
-    grid-area: "zona1";
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 2rem 0;
-    font-family: "Oswald", sans-serif; }
-  .dibujo-img {
-    grid-area: "zona2";
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: 70%;
-    gap: 1.5rem; }
-  .dibujo-info {
-    grid-area: "zona3"; }
-  .inspiradores-img {
-    grid-area: "zona4";
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: auto;
-    width: 70%;
-    gap: 1.5rem; }
-  .inspiradores-info {
-    grid-area: "zona5"; }
-  .anotadores-img {
-    grid-area: "zona6";
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: auto;
-    gap: 2%;
-    width: 70%;
-    gap: 1.5rem; }
-  .anotadores-info {
-    grid-area: "zona7"; }
-  /* Galeria para < 600px */
-  .galeria__item {
-    max-width: 70%;
-    margin: 1rem;
-    overflow: hidden; }
-  .galeria {
-    grid-template-columns: 1fr;
-    place-items: center; }
-  /*  Contacto para < 600px*/
-  .contacto-h1 {
-    grid-area: "titulo-medios";
-    text-align: center;
-    font-family: "Oswald", sans-serif; }
-  .contacto-cards {
-    grid-area: "medios";
-    display: flex;
-    flex-direction: column;
-    gap: 2%;
-    justify-content: space-evenly;
-    align-items: center; }
-  .contacto-cards-item {
-    height: 27%;
-    width: 80%; }
-  .contacto-cards-img {
-    height: 30%; }
-  .form-h2 {
-    grid-area: "titulo-form";
-    text-align: center;
-    font-family: "Oswald", sans-serif; }
-  /* Estilo del formulario para < 600px */
-  .contenedor-formulario {
-    grid-area: "formulario";
-    justify-self: center;
-    width: 70%;
-    margin-top: 10%; }
-  .formulario {
-    display: flex;
-    flex-direction: column; }
-  .formulario input {
-    margin-bottom: .5rem;
-    font-family: "DM Sans", sans-serif; }
-  .formulario button {
-    margin: 1rem;
-    padding: 1rem;
-    border-bottom: 3px solid white;
-    border-right: 3px solid #bdbaba;
-    border-radius: 1,5%; }
-  label {
-    line-height: 40px;
-    font-family: "DM Sans", sans-serif; }
-  /* Footer para < 600px */
-  footer {
-    grid-area: "footer";
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-top: 5%;
-    margin-bottom: 50px; }
-  footer ul {
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: .3rem; }
-  .footer-social {
-    justify-content: space-between;
-    width: 25%; } }
+  display: grid;
+  height: auto;
+  grid-template-columns: auto;
+  grid-template-rows: 50px 1100px 50px 700px;
+  grid-template-areas: "titulo-medios" "medios" "titulo-form" "formulario";
+  text-align: center;
+  justify-items: center; }
 
 @media only screen and (min-width: 600px) {
+  #grilla {
+    grid-template-rows: 450px 450px 450px; }
   #layout-container {
     grid-template-rows: 150px 1400px 200px; }
   #layout-nos-container {
@@ -455,13 +432,6 @@ footer {
     grid-template-rows: 150px 1700px 200px; }
   #layout-galeria {
     grid-template-rows: 150px auto 200px; }
-  #grilla {
-    height: auto;
-    grid-template-columns: auto;
-    grid-template-rows: 450px 450px 450px;
-    grid-template-areas: "zona1" "zona2" "zona3";
-    align-content: space-evenly;
-    justify-content: center; }
   #nos-grilla {
     grid-area: "main";
     place-self: center;
@@ -476,11 +446,9 @@ footer {
     text-align: center; }
   #contact-grilla {
     grid-template-rows: 90px 500px 50px 750px;
-    grid-template-areas: "titulo-medios" "medios" "titulo-form" "formulario";
-    text-align: center;
-    place-items: center; }
+    grid-template-areas: "titulo-medios" "medios" "titulo-form" "formulario"; }
   header {
-    grid-area: "header"; }
+    grid-area: header; }
     header li {
       margin: 0 1.5rem;
       font-size: 1.5rem;
@@ -496,88 +464,65 @@ footer {
   /* Index para >600px */
   .main-info {
     place-items: center;
-    grid-area: "zona1";
+    grid-area: zona1;
     background-size: cover; }
   .main-text {
-    width: 35%;
-    height: 70%;
-    padding: 2%;
+    padding: 10%;
     backdrop-filter: blur(8px);
     justify-content: center; }
   .cards {
-    justify-content: space-evenly; }
+    flex-direction: row; }
     .cards .carta {
       height: 90%;
       width: 30%; }
   .feedback {
-    grid-area: "zona3";
+    grid-area: zona3;
     margin: auto;
-    width: 95%;
-    height: 70%;
-    gap: 10%; }
+    width: 95%; }
     .feedback .feedback-opiniones {
-      justify-content: space-evenly;
-      gap: 10%; }
+      flex-direction: row; }
       .feedback .feedback-opiniones .feedback-card {
-        flex-direction: column;
         width: 35%; }
   /* Nosotros*/
   .banner {
-    grid-area: "a1";
+    grid-area: a1;
     background-image: url(../img/flat-lay-notepad-template-with-tea-concept.jpg);
     width: 90%;
     height: 90%;
     background-size: cover;
     background-position: center; }
   .nosotros-info {
-    grid-area: "a2";
+    grid-area: a2;
     width: 80%; }
   .ubicacion-info {
-    grid-area: "b1";
+    grid-area: b1;
     width: 60%; }
   .ubicacion-map {
-    grid-area: "b2";
+    grid-area: b2;
     width: 90%;
     height: 70%; }
   /* Producto para > 600px */
   #prod-grilla {
     height: auto;
     grid-template-columns: auto;
-    grid-template-areas: "zona1" "zona2" "zona3" "zona4" "zona5" "zona6" "zona7";
-    gap: 1.5rem;
-    align-items: center;
-    text-align: center;
-    place-items: center; }
-  #prod-img {
-    object-fit: cover;
+    grid-template-areas: "zona1" "zona2" "zona3" "zona4" "zona5" "zona6" "zona7"; }
+  .producto__item__img {
     padding: 1%; }
-  .productos-h1 {
-    grid-area: "zona1";
-    margin: 2rem 0; }
-  .dibujo-img {
-    grid-area: "zona2";
-    display: flex;
-    gap: 10%;
+  .dibujo {
+    flex-direction: row;
+    gap: 6em;
     justify-content: space-evenly;
     width: 80%; }
-  .dibujo-info {
-    grid-area: "zona3"; }
-  .inspiradores-img {
-    grid-area: "zona4";
-    display: flex;
-    gap: 10%;
+  .inspiradores {
+    flex-direction: row;
+    gap: 6em;
     justify-content: space-evenly;
     width: 80%; }
-  .inspiradores-info {
-    grid-area: "zona5"; }
-  .anotadores-img {
-    grid-area: "zona6";
-    display: flex;
-    gap: 10%;
+  .anotadores {
+    flex-direction: row;
+    gap: 6em;
     justify-content: space-evenly;
     width: 80%; }
-  .anotadores-info {
-    grid-area: "zona7"; }
   /* Galeria para >600px */
   .galeria-contenedor {
     margin: 0 1rem; }
@@ -585,16 +530,21 @@ footer {
     grid-template-columns: 30% 30% 30%;
     grid-template-rows: 450px 240px 350px 400px 400px 400px 400px 260px;
     justify-content: center;
-    column-gap: 30px;
-    row-gap: 30px; }
+    column-gap: 2em;
+    row-gap: 2em; }
   .galeria__item {
-    overflow: hidden; }
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    height: 100%;
+    border: linear-gradient(135deg, turquoise, greenyellow) 1; }
   /* Contacto para > 600px */
   .contacto-h1 {
-    grid-area: "titulo-medios";
+    grid-area: titulo-medios;
     text-align: center; }
   .contacto-cards {
-    grid-area: "medios";
+    grid-area: medios;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -606,17 +556,16 @@ footer {
   .contacto-cards-img {
     width: 50%; }
   .form-h2 {
-    grid-area: "titulo-form";
+    grid-area: titulo-form;
     text-align: center;
     font-family: "Oswald", sans-serif; }
   /* Estilo del formulario para > 600px*/
   .contenedor-formulario {
-    grid-area: "formulario";
+    grid-area: formulario;
     justify-self: center;
     width: 50%; }
   /* Footer para >600px */
   footer {
-    padding: 40px 25px;
     font-size: 1.5rem;
     justify-content: space-around;
     align-items: center; }

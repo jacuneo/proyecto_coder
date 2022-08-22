@@ -1,5 +1,12 @@
 #grilla { 
     display: grid;
+    height: auto;
+    grid-template-columns: auto; 
+    grid-template-areas: "zona1"
+                         "zona2"
+                         "zona3";
+    align-content: space-evenly;
+    justify-content: center;
 }
 
 #layout-container {
@@ -7,6 +14,7 @@
     grid-template-areas: "header"
                          "main"
                          "footer";
+    grid-template-rows:  100px auto 218px;
 }
 
 #layout-nos-container {
@@ -14,13 +22,15 @@
     grid-template-areas: "header"
                          "main"
                          "footer";
+    grid-template-rows:  100px auto 218px;
 }
 
 #layout-prod-container {
     display: grid;
     grid-template-areas: "header"
                          "main"
-                         "footer"
+                         "footer";
+    grid-template-rows:  100px auto 218px;
 }
 
 #layout-galeria {
@@ -28,16 +38,48 @@
     grid-template-areas: "header"
                          "main"
                          "footer";
+    grid-template-columns: auto;
+    grid-template-rows:  100px auto 200px;
 }
 
 #nos-grilla { 
     display: grid;
+    height: 1450px;
+    grid-template-columns: auto;
+    grid-template-rows: 150px 550px 300px 350px;
+    grid-template-areas: "zona1"
+                         "zona2"
+                         "zona3"
+                         "zona4";
+    gap: 2%;
+    place-items: center;
+    text-align: center;
 }
 
 #prod-grilla {
     display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "zona1"
+                         "zona2"
+                         "zona3"
+                         "zona4"
+                         "zona5"
+                         "zona6"
+                         "zona7";
+    gap: 1.5em;
+    align-items: center;
+    text-align: center;
 }
 
 #contact-grilla {
     display: grid;
+    height: auto;
+    grid-template-columns: auto;
+    grid-template-rows: 50px 1100px 50px 700px;
+    grid-template-areas: "titulo-medios"
+                         "medios"
+                         "titulo-form"
+                         "formulario";
+    text-align: center;
+    justify-items: center;
 }
