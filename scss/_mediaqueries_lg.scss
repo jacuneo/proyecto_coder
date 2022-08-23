@@ -35,12 +35,12 @@
         justify-content: center;
     }       
 
+    #prod-grilla {
+        gap: 0;
+    }
+    
     #contact-grilla {
         grid-template-rows: 90px 400px 50px auto;
-        grid-template-areas: "titulo-medios"
-                             "medios"
-                             "titulo-form"
-                             "formulario";
     }
 
     header {
@@ -119,7 +119,7 @@
 
     .ubicacion-info {
         grid-area:b1;
-        width: 60%;
+        width: 90%;
     }
 
     .ubicacion-map {
@@ -129,23 +129,7 @@
     }
 
 /* Producto para > 600px */
-
-    #prod-grilla {
-    height: auto;
-    grid-template-columns: auto;
-    grid-template-areas: "zona1"
-                         "zona2"
-                         "zona3"
-                         "zona4"
-                         "zona5"
-                         "zona6"
-                         "zona7";
-    }
-
-    .producto__item__img {
-        padding: 1%;
-    }
-
+    
     .dibujo,
     .inspiradores,
     .anotadores {
@@ -155,8 +139,8 @@
         align-items: center;
         padding: 1em;
         justify-content: space-evenly;
-      }
-    
+    }
+
 /* Galeria para >600px */
 
     .galeria-contenedor {

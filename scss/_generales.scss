@@ -242,10 +242,10 @@ main {
 }
 
 .producto__item {
-    
     &__img {
         width:100%;
         transition:all 1s;
+        border: solid transparent 8px;
     }
     
     &__img:hover {
