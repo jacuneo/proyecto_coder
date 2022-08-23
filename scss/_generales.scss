@@ -75,7 +75,6 @@ header {
     } 
 }
 
-
 /* Estilos generales del Index  */
 main {
     grid-area: main;
@@ -328,6 +327,7 @@ main {
     grid-area: titulo-medios;
     text-align: center;
     font-family: $fuente_uno;
+    margin: auto;
 }
 
 .form-h2 {
@@ -343,31 +343,12 @@ main {
     margin-top: 10%;
 }
 
-.formulario {
-    display: flex;
-    flex-direction: column;
-}
-
-.formulario input {
-    margin-bottom: .5rem;
-    font-family: $fuente_dos;
-}
-
-.formulario button {
-    margin: 1rem;
-    padding: 1rem;
-    border-bottom: 3px solid white;
-    border-right: 3px solid rgb(189, 186, 186);
-    border-radius: 1,5%;
-}
-
-label {
-    line-height: 40px;
-    font-family: $fuente_dos;
-}
-
-
 form {
+    label {
+        line-height: 40px;
+        font-family: $fuente_dos;
+    }
+
     input {
     transition:all .2s;
     }
@@ -404,25 +385,24 @@ form {
     gap: 2%;
     justify-content: space-evenly;
     align-items: center;
-}
 
-.contacto-cards-item {
-    display:flex;
-    flex-direction:column;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 4px solid;
-    padding: 1em;
-    border-image: $borde_uno;
-    background-image: linear-gradient(rgb(244, 244, 234), rgb(224, 244, 224));
-    height: 27%;
-    width: 80%;
-}
+    .contacto-cards-item {
+        display:flex;
+        flex-direction:column;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 4px solid;
+        padding: 1em;
+        border-image: $borde_uno;
+        background-image: linear-gradient(rgb(244, 244, 234), rgb(224, 244, 224));
+        height: 27%;
+        width: 80%;
+    }
 
-.contacto-cards-img {
-    height: 30%;
+    .contacto-cards-img {
+        height: 30%;
+    }
 }
-
 
 footer {
     display: flex;

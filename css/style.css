@@ -249,7 +249,8 @@ main {
 .contacto-h1 {
   grid-area: titulo-medios;
   text-align: center;
-  font-family: "Oswald", sans-serif; }
+  font-family: "Oswald", sans-serif;
+  margin: auto; }
 
 .form-h2 {
   grid-area: titulo-form;
@@ -262,22 +263,7 @@ main {
   width: 70%;
   margin-top: 10%; }
 
-.formulario {
-  display: flex;
-  flex-direction: column; }
-
-.formulario input {
-  margin-bottom: .5rem;
-  font-family: "DM Sans", sans-serif; }
-
-.formulario button {
-  margin: 1rem;
-  padding: 1rem;
-  border-bottom: 3px solid white;
-  border-right: 3px solid #bdbaba;
-  border-radius: 1,5%; }
-
-label {
+form label {
   line-height: 40px;
   font-family: "DM Sans", sans-serif; }
 
@@ -311,21 +297,19 @@ form textarea:focus {
   gap: 2%;
   justify-content: space-evenly;
   align-items: center; }
-
-.contacto-cards-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border: 4px solid;
-  padding: 1em;
-  border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
-  background-image: linear-gradient(#f4f4ea, #e0f4e0);
-  height: 27%;
-  width: 80%; }
-
-.contacto-cards-img {
-  height: 30%; }
+  .contacto-cards .contacto-cards-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 4px solid;
+    padding: 1em;
+    border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
+    background-image: linear-gradient(#f4f4ea, #e0f4e0);
+    height: 27%;
+    width: 80%; }
+  .contacto-cards .contacto-cards-img {
+    height: 30%; }
 
 footer {
   display: flex;
@@ -393,6 +377,11 @@ footer {
   grid-template-columns: auto;
   grid-template-rows: 100px auto 200px; }
 
+#layout-contacto {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: 100px auto 218px; }
+
 #nos-grilla {
   display: grid;
   height: 1450px;
@@ -432,40 +421,33 @@ footer {
     grid-template-rows: 150px 1700px 200px; }
   #layout-galeria {
     grid-template-rows: 150px auto 200px; }
+  #layout-contacto {
+    grid-template-rows: 150px 1210px 200px; }
   #nos-grilla {
-    grid-area: "main";
+    grid-area: main;
     place-self: center;
     height: 1050px;
     grid-template-columns: 45% 45%;
-    grid-template-rows: 500px 500px;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: "a1 a2" "b1 b2";
-    gap: 2%;
     justify-content: center;
-    align-content: center;
-    place-items: center;
-    text-align: center; }
+    align-content: center; }
   #contact-grilla {
-    grid-template-rows: 90px 500px 50px 750px;
+    grid-template-rows: 90px 400px 50px auto;
     grid-template-areas: "titulo-medios" "medios" "titulo-form" "formulario"; }
-  header {
-    grid-area: header; }
-    header li {
-      margin: 0 1.5rem;
-      font-size: 1.5rem;
-      border-radius: 5px;
-      padding: 0 .3rem;
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px; }
-    header .nav-img {
-      margin-left: 40px; }
-    header .header-ul {
-      gap: 3rem; }
-    header .navbar {
-      height: 140px; }
+  header li {
+    margin: 0 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: 0 .3rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px; }
+  header .nav-img {
+    margin-left: 40px; }
+  header .header-ul {
+    gap: 3rem; }
+  header .navbar {
+    height: 140px; }
   /* Index para >600px */
-  .main-info {
-    place-items: center;
-    grid-area: zona1;
-    background-size: cover; }
   .main-text {
     padding: 10%;
     backdrop-filter: blur(8px);
@@ -476,7 +458,6 @@ footer {
       height: 90%;
       width: 30%; }
   .feedback {
-    grid-area: zona3;
     margin: auto;
     width: 95%; }
     .feedback .feedback-opiniones {
@@ -488,9 +469,7 @@ footer {
     grid-area: a1;
     background-image: url(../img/flat-lay-notepad-template-with-tea-concept.jpg);
     width: 90%;
-    height: 90%;
-    background-size: cover;
-    background-position: center; }
+    height: 90%; }
   .nosotros-info {
     grid-area: a2;
     width: 80%; }
@@ -508,21 +487,15 @@ footer {
     grid-template-areas: "zona1" "zona2" "zona3" "zona4" "zona5" "zona6" "zona7"; }
   .producto__item__img {
     padding: 1%; }
-  .dibujo {
-    flex-direction: row;
-    gap: 6em;
-    justify-content: space-evenly;
-    width: 80%; }
-  .inspiradores {
-    flex-direction: row;
-    gap: 6em;
-    justify-content: space-evenly;
-    width: 80%; }
+  .dibujo,
+  .inspiradores,
   .anotadores {
     flex-direction: row;
-    gap: 6em;
-    justify-content: space-evenly;
-    width: 80%; }
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 1em;
+    justify-content: space-evenly; }
   /* Galeria para >600px */
   .galeria-contenedor {
     margin: 0 1rem; }
@@ -532,43 +505,31 @@ footer {
     justify-content: center;
     column-gap: 2em;
     row-gap: 2em; }
-  .galeria__item {
-    overflow: hidden;
-    max-width: 100%;
-    width: 100%;
-    max-height: 100%;
-    height: 100%;
-    border: linear-gradient(135deg, turquoise, greenyellow) 1; }
+    .galeria__item {
+      max-width: 100%;
+      width: 100%;
+      max-height: 100%;
+      height: 100%; }
   /* Contacto para > 600px */
-  .contacto-h1 {
-    grid-area: titulo-medios;
-    text-align: center; }
   .contacto-cards {
-    grid-area: medios;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 300px;
-    gap: 2%; }
-  .contacto-cards-item {
-    height: 100%;
-    width: 30%; }
-  .contacto-cards-img {
-    width: 50%; }
-  .form-h2 {
-    grid-area: titulo-form;
-    text-align: center;
-    font-family: "Oswald", sans-serif; }
+    flex-direction: row;
+    height: 75%;
+    margin: auto;
+    width: 85%; }
+    .contacto-cards .contacto-cards-item {
+      height: 100%;
+      width: 100%; }
+    .contacto-cards .contacto-cards-img {
+      width: 50%; }
   /* Estilo del formulario para > 600px*/
   .contenedor-formulario {
-    grid-area: formulario;
-    justify-self: center;
-    width: 50%; }
+    width: 50%;
+    margin-top: .5em; }
   /* Footer para >600px */
   footer {
     font-size: 1.5rem;
-    justify-content: space-around;
-    align-items: center; }
+    padding-top: 0;
+    margin-bottom: 0; }
     footer .footer-menu li {
       padding: 0 1rem; }
     footer .footer-social a {

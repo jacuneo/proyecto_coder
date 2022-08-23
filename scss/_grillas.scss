@@ -42,6 +42,14 @@
     grid-template-rows:  100px auto 200px;
 }
 
+#layout-contacto {
+    display: grid;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+    grid-template-rows:  100px auto 218px;
+}
+
 #nos-grilla { 
     display: grid;
     height: 1450px;
