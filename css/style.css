@@ -350,8 +350,6 @@ footer {
 
 #grilla {
   display: grid;
-  height: auto;
-  grid-template-columns: auto;
   grid-template-areas: "zona1" "zona2" "zona3";
   align-content: space-evenly;
   justify-content: center; }
@@ -430,8 +428,7 @@ footer {
     grid-template-columns: 45% 45%;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "a1 a2" "b1 b2";
-    justify-content: center;
-    align-content: center; }
+    justify-content: center; }
   #contact-grilla {
     grid-template-rows: 90px 400px 50px auto;
     grid-template-areas: "titulo-medios" "medios" "titulo-form" "formulario"; }
@@ -461,7 +458,10 @@ footer {
     margin: auto;
     width: 95%; }
     .feedback .feedback-opiniones {
-      flex-direction: row; }
+      flex-direction: row;
+      padding: 1em;
+      margin-block: 2em;
+      justify-content: space-around; }
       .feedback .feedback-opiniones .feedback-card {
         width: 35%; }
   /* Nosotros*/
@@ -472,7 +472,11 @@ footer {
     height: 90%; }
   .nosotros-info {
     grid-area: a2;
-    width: 80%; }
+    width: 90%; }
+    .nosotros-info h1 {
+      margin-bottom: .5em; }
+    .nosotros-info h2 {
+      margin-bottom: .5em; }
   .ubicacion-info {
     grid-area: b1;
     width: 60%; }

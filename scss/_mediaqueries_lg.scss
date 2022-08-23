@@ -33,7 +33,6 @@
         grid-template-areas: "a1 a2"
                              "b1 b2";
         justify-content: center;
-        align-content: center;
     }       
 
     #contact-grilla {
@@ -88,6 +87,9 @@
         
         .feedback-opiniones {
             flex-direction: row;
+            padding: 1em;
+            margin-block: 2em;
+            justify-content: space-around;
             
             .feedback-card {
                 width: 35%;
@@ -105,7 +107,14 @@
 
     .nosotros-info {
         grid-area: a2;
-        width: 80%;
+        width: 90%;
+        h1 {
+            margin-bottom: .5em;
+        }
+        
+        h2 {
+            margin-bottom: .5em;
+        }
     }
 
     .ubicacion-info {
@@ -182,7 +191,7 @@
         }
 
         .contacto-cards-img {
-        width: 50%;
+            width: 50%;
         }
     }
 
