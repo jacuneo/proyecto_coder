@@ -4,7 +4,6 @@
     box-sizing: border-box;
     list-style-type: none;
     text-decoration: none;
-    text-decoration-style: none;
     color: #000000;
 }
 
@@ -234,11 +233,6 @@ main {
 
 .dibujo {
     grid-area: zona2;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 70%;
-    gap: 1.5em;
 }
 
 .producto__item {
@@ -259,12 +253,7 @@ main {
 }
 
 .inspiradores {
-    grid-area: zona4;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 80%;
-    gap: 1.5em;    
+    grid-area: zona4;  
 }
 
 .inspiradores-info {
@@ -273,15 +262,20 @@ main {
 
 .anotadores {
     grid-area: zona6;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 80%;
-    gap: 1.5em;
 }
 
 .anotadores-info {
     grid-area: zona7;
+}
+
+.dibujo,
+.inspiradores,
+.anotadores {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 70%;
+    gap: 1.5em;    
 }
 
 /* Estilo de la galeria */
@@ -317,7 +311,6 @@ main {
     &__item-animation:hover {
         transform: scale(1.2);
         filter: grayscale(0);
-        
     }
 }
 

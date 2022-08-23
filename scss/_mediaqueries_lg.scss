@@ -120,6 +120,7 @@
     .ubicacion-info {
         grid-area:b1;
         width: 90%;
+        min-height: 70%;
     }
 
     .ubicacion-map {
@@ -129,7 +130,6 @@
     }
 
 /* Producto para > 600px */
-    
     .dibujo,
     .inspiradores,
     .anotadores {
@@ -142,7 +142,6 @@
     }
 
 /* Galeria para >600px */
-
     .galeria-contenedor {
     margin: 0 1rem;
     }   
