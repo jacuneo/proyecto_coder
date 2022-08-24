@@ -20,12 +20,18 @@ h2 {
 p {
     font-family: $fuente_dos;
 }
+@mixin flexi ($dis , $dire , $justi , $align , $txtalign){
+    display: $dis;
+    flex-direction: $dire;
+    justify-content: $justi;
+    align-items: $align;
+    text-align: $txtalign;
+}
 
 header {
+    grid-area: header;
+    @include flexi (flex , row , space-between , center , center);
     border-bottom: 1px solid gray;
-    display: flex;
-    grid-area: header;  
-    justify-content: space-between;
 
     ul {
         display:flex;
@@ -44,11 +50,9 @@ header {
     }
 
     nav {
-        align-items: center;
-        display: flex;
+        @include flexi (flex , row , space-evenly , center , center);
         gap: 2em;
-        justify-content: space-evenly;
-        padding:0 1em; 
+        padding:0 1em;
     }
 
     nav li {
@@ -80,21 +84,17 @@ main {
 }
 
 .main-info {
+    grid-area: zona1;
+    @include flexi (flex , row , center , center, center );
     background-image: url(../img/top-view-of-desk-top-with-notebook-and-scissors.jpg);
     background-size: cover;
-    display: flex;
-    grid-area: zona1;
-    justify-content: center;
     padding: 1em 0;
-    place-items: center;
-    text-align: center;
 }
 
 .main-text {
+    @include flexi (flex , column , center , center, center );
     border: 4px solid;
     border-image: $borde_uno;
-    display: flex;
-    flex-direction: column;
     padding: 7%;
     width: 70%;
 
@@ -108,23 +108,15 @@ main {
 }
 
 .cards {
-    align-items: center;
-    display:flex;
-    flex-direction: column;
     grid-area: zona2;
-    justify-content: space-evenly;
-    place-content: center;
+    @include flexi (flex , column , space-evenly , center, center );
     
     .carta {
-        align-items: center;
+        @include flexi (flex , column , space-evenly , center, center );
         border: 4px solid;
         border-image: $borde_uno;
-        display:flex;
-        flex-direction: column;
         height: 30%;
-        justify-content: space-evenly;
         padding: 1em;
-        text-align: center;
         width: 70%;
 
         &__img {
@@ -140,15 +132,11 @@ main {
 
 /* Index - Feedback */
 .feedback {
-    align-items: center;
+    grid-area: zona3;
+    @include flexi (flex , column , space-evenly , center, center );
     border: 4px solid;
     border-image: $borde_uno;
-    display: flex;
-    flex-direction: column;
-    grid-area: zona3;
-    justify-content: space-evenly;
     margin: 1em auto;
-    text-align:center;
     width: 70%;
 
     .feedback-h2 {
@@ -156,16 +144,11 @@ main {
     }
 
     .feedback-opiniones {
-        align-items: center;
-        display: flex;
-        flex-direction:column;
+        @include flexi (flex , column , space-evenly , center, center );
         gap: 10%;
-        justify-content: space-evenly;
-        text-align: center;
         
         .feedback-card {
-            display:flex;
-            flex-direction: column;
+            @include flexi (flex , column , space-evenly , center, center );
             gap:1rem;
             padding: 15px;
             width: 70%;
@@ -175,25 +158,20 @@ main {
 
 /* Estilo general de Nosotros */
 .banner {
+    grid-area: zona1;
     background-image: url(../img/concept-or-composition-of-hygge-with-different-accessories.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    grid-area: zona1;
     height: 150px;
     width:100%;
 }
 
-.nosotros-main {
-    display: flex;
-}
-
 .nosotros-info {
+    grid-area: zona2;
+    @include flexi (flex , column , space-evenly , center, center );
     border: 4px solid;
     border-image: $borde_uno;
-    display: flex;
-    flex-direction: column;
-    grid-area: zona2;
     padding: 1rem;
     width: 85%;
 
@@ -207,28 +185,25 @@ main {
 }
 
 .ubicacion-info {
+    grid-area: zona3;
     border: 4px solid;
     border-image: $borde_uno;
-    grid-area: zona3;
-    padding: 1rem;
+    padding: 2em;
     width: 85%;
 }
 
 .ubicacion-map {
     grid-area: zona4;
     height: 80%;
-    offset-block-end: 15px;
     width: 90%;
 }
 
 /* Producto */
 .productos-h1 {
-    display: flex;
-    font-family: $fuente_uno;
     grid-area: zona1;
-    justify-content: center;
+    @include flexi (flex , column , space-evenly , center, center );
+    font-family: $fuente_uno;
     margin: 2em 0;
-    text-align: center;
 }
 
 .dibujo {
@@ -246,10 +221,15 @@ main {
         border: 8px solid white;
         border-image: $borde_uno; 
     }
+    figure {
+        width:100%;
+        margin:0;
+    }
 }
 
 .dibujo-info {
     grid-area: zona3;
+    @include flexi (flex , column , space-evenly , center, center );
 }
 
 .inspiradores {
@@ -258,6 +238,7 @@ main {
 
 .inspiradores-info {
     grid-area: zona5;
+    @include flexi (flex , column , space-evenly , center, center );
 }
 
 .anotadores {
@@ -266,16 +247,16 @@ main {
 
 .anotadores-info {
     grid-area: zona7;
+    @include flexi (flex , column , space-evenly , center, center );
 }
 
 .dibujo,
 .inspiradores,
 .anotadores {
-    display: flex;
-    flex-direction: column;
+    @include flexi (flex , column , space-evenly , center, center );
     gap: 1.5em;  
     margin: 0 auto; 
-    width: 70%; 
+    width: 80%; 
 }
 
 /* Estilo de la galeria */

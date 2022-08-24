@@ -18,10 +18,13 @@ p {
   font-family: "DM Sans", sans-serif; }
 
 header {
-  border-bottom: 1px solid gray;
-  display: flex;
   grid-area: header;
-  justify-content: space-between; }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid gray; }
   header ul {
     display: flex; }
   header li {
@@ -33,10 +36,12 @@ header {
     color: black;
     text-decoration: none; }
   header nav {
-    align-items: center;
     display: flex;
-    gap: 2em;
+    flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    gap: 2em;
     padding: 0 1em; }
   header nav li {
     transition: all .6s; }
@@ -56,20 +61,24 @@ main {
   grid-area: main; }
 
 .main-info {
+  grid-area: zona1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-image: url(../img/top-view-of-desk-top-with-notebook-and-scissors.jpg);
   background-size: cover;
-  display: flex;
-  grid-area: zona1;
-  justify-content: center;
-  padding: 1em 0;
-  place-items: center;
-  text-align: center; }
+  padding: 1em 0; }
 
 .main-text {
-  border: 4px solid;
-  border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 4px solid;
+  border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
   padding: 7%;
   width: 70%; }
   .main-text h1 {
@@ -78,22 +87,22 @@ main {
     margin: 1%; }
 
 .cards {
-  align-items: center;
+  grid-area: zona2;
   display: flex;
   flex-direction: column;
-  grid-area: zona2;
   justify-content: space-evenly;
-  place-content: center; }
+  align-items: center;
+  text-align: center; }
   .cards .carta {
-    align-items: center;
-    border: 4px solid;
-    border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
     display: flex;
     flex-direction: column;
-    height: 30%;
     justify-content: space-evenly;
-    padding: 1em;
+    align-items: center;
     text-align: center;
+    border: 4px solid;
+    border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
+    height: 30%;
+    padding: 1em;
     width: 70%; }
     .cards .carta__img {
       height: 40%;
@@ -103,51 +112,54 @@ main {
 
 /* Index - Feedback */
 .feedback {
-  align-items: center;
-  border: 4px solid;
-  border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
+  grid-area: zona3;
   display: flex;
   flex-direction: column;
-  grid-area: zona3;
   justify-content: space-evenly;
-  margin: 1em auto;
+  align-items: center;
   text-align: center;
+  border: 4px solid;
+  border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
+  margin: 1em auto;
   width: 70%; }
   .feedback .feedback-h2 {
     padding: 1em 0 .5em; }
   .feedback .feedback-opiniones {
-    align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 10%;
     justify-content: space-evenly;
-    text-align: center; }
+    align-items: center;
+    text-align: center;
+    gap: 10%; }
     .feedback .feedback-opiniones .feedback-card {
       display: flex;
       flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      text-align: center;
       gap: 1rem;
       padding: 15px;
       width: 70%; }
 
 /* Estilo general de Nosotros */
 .banner {
+  grid-area: zona1;
   background-image: url(../img/concept-or-composition-of-hygge-with-different-accessories.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  grid-area: zona1;
   height: 150px;
   width: 100%; }
 
-.nosotros-main {
-  display: flex; }
-
 .nosotros-info {
-  border: 4px solid;
-  border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
+  grid-area: zona2;
   display: flex;
   flex-direction: column;
-  grid-area: zona2;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  border: 4px solid;
+  border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
   padding: 1rem;
   width: 85%; }
   .nosotros-info h1 {
@@ -156,26 +168,27 @@ main {
     margin-bottom: 1em; }
 
 .ubicacion-info {
+  grid-area: zona3;
   border: 4px solid;
   border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
-  grid-area: zona3;
-  padding: 1rem;
+  padding: 2em;
   width: 85%; }
 
 .ubicacion-map {
   grid-area: zona4;
   height: 80%;
-  offset-block-end: 15px;
   width: 90%; }
 
 /* Producto */
 .productos-h1 {
-  display: flex;
-  font-family: "Oswald", sans-serif;
   grid-area: zona1;
-  justify-content: center;
-  margin: 2em 0;
-  text-align: center; }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  margin: 2em 0; }
 
 .dibujo {
   grid-area: zona2; }
@@ -189,29 +202,51 @@ main {
   border: 8px solid white;
   border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
 
+.producto__item figure {
+  width: 100%;
+  margin: 0; }
+
 .dibujo-info {
-  grid-area: zona3; }
+  grid-area: zona3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center; }
 
 .inspiradores {
   grid-area: zona4; }
 
 .inspiradores-info {
-  grid-area: zona5; }
+  grid-area: zona5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center; }
 
 .anotadores {
   grid-area: zona6; }
 
 .anotadores-info {
-  grid-area: zona7; }
+  grid-area: zona7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center; }
 
 .dibujo,
 .inspiradores,
 .anotadores {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
   gap: 1.5em;
   margin: 0 auto;
-  width: 70%; }
+  width: 80%; }
 
 /* Estilo de la galeria */
 .galeria-h1 {
@@ -350,40 +385,24 @@ footer {
 
 #layout-container, #layout-nos-container, #layout-prod-container, #layout-galeria, #layout-contacto {
   display: grid;
-  grid-template-areas: "header" "main" "footer";
-  grid-template-rows: 100px auto 218px; }
+  grid-template-areas: "header" "main" "footer"; }
 
 /* Practicando @extend */
-#layout-nos-container {
-  grid-template-rows: 100px auto 218px; }
-
-#layout-prod-container {
-  grid-template-rows: 100px auto 218px; }
-
-#layout-galeria {
-  grid-template-columns: auto;
-  grid-template-rows: 100px auto 200px; }
-
-#layout-contacto {
-  grid-template-rows: 100px auto 218px; }
-
 #nos-grilla {
   display: grid;
-  height: 1450px;
   grid-template-columns: auto;
-  grid-template-rows: 150px 550px 300px 350px;
+  grid-template-rows: auto auto auto 350px;
   grid-template-areas: "zona1" "zona2" "zona3" "zona4";
-  gap: 2%;
   place-items: center;
-  text-align: center; }
+  text-align: center;
+  gap: 2em; }
 
 #prod-grilla {
   display: grid;
   grid-template-columns: auto;
   grid-template-areas: "zona1" "zona2" "zona3" "zona4" "zona5" "zona6" "zona7";
   gap: 1.5em;
-  align-items: center;
-  text-align: center; }
+  align-items: center; }
 
 #contact-grilla {
   display: grid;
@@ -397,8 +416,11 @@ footer {
 @media only screen and (min-width: 600px) {
   #grilla {
     grid-template-rows: 450px 450px 450px; }
-  #layout-container, #layout-nos-container, #layout-prod-container, #layout-galeria, #layout-contacto {
-    grid-template-rows: 150px 1400px 200px; }
+  /*
+    #layout-container {
+        grid-template-rows:  150px 1400px 200px; 
+    }
+    */
   #layout-nos-container {
     grid-template-rows: 150px 1050px 200px; }
   #layout-prod-container {
