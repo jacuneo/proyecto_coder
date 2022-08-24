@@ -200,11 +200,9 @@ main {
 
 .producto__item__img:hover {
   border: 8px solid white;
-  border-image: linear-gradient(135deg, turquoise, greenyellow) 1; }
-
-.producto__item figure {
-  width: 100%;
-  margin: 0; }
+  border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
+  transform: translateX(-5px);
+  transition: ease-in-out .5s; }
 
 .dibujo-info {
   grid-area: zona3;

@@ -219,11 +219,9 @@ main {
     
     &__img:hover {
         border: 8px solid white;
-        border-image: $borde_uno; 
-    }
-    figure {
-        width:100%;
-        margin:0;
+        border-image: $borde_uno;
+        transform:translateX(-5px);
+        transition: ease-in-out .5s;
     }
 }
 
@@ -292,7 +290,6 @@ main {
     &__item-animation:hover {
         filter: grayscale(0);
         transform: scale(1.2);
-        
     }
 }
 
