@@ -7,7 +7,7 @@
   text-decoration: none; }
 
 body {
-  background-image: url(../img/4853433.jpg);
+  background-image: url(../img/fondo.webp);
   background-size: contain; }
 
 h1,
@@ -67,7 +67,7 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url(../img/top-view-of-desk-top-with-notebook-and-scissors.jpg);
+  background-image: url(../img/top-view-of-desk-top-with-notebook-and-scissors.webp);
   background-size: cover;
   padding: 1em 0; }
 
@@ -144,7 +144,7 @@ main {
 /* Estilo general de Nosotros */
 .banner {
   grid-area: zona1;
-  background-image: url(../img/concept-or-composition-of-hygge-with-different-accessories.jpg);
+  background-image: url(../img/concept-or-composition-of-hygge-with-different-accessories.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -474,7 +474,7 @@ footer {
         width: 35%; }
   /* Nosotros*/
   .banner {
-    background-image: url(../img/flat-lay-notepad-template-with-tea-concept.jpg);
+    background-image: url(../img/flat-lay-notepad-template-with-tea-concept.webp);
     grid-area: a1;
     height: 90%;
     width: 90%; }
