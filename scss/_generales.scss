@@ -1,10 +1,10 @@
 * {
+    box-sizing: border-box;
+    color: #000000;
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    list-style-type: none;
     text-decoration: none;
-    color: #000000;
 }
 
 body{
@@ -22,10 +22,10 @@ p {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
     border-bottom: 1px solid gray;
+    display: flex;
     grid-area: header;  
+    justify-content: space-between;
 
     ul {
         display:flex;
@@ -33,8 +33,8 @@ header {
 
     li {
         color:black;
-        text-decoration: none;
         padding:.5rem;
+        text-decoration: none;
     }
 
     a,
@@ -44,10 +44,10 @@ header {
     }
 
     nav {
-        display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        display: flex;
         gap: 2em;
+        justify-content: space-evenly;
         padding:0 1em; 
     }
 
@@ -80,23 +80,23 @@ main {
 }
 
 .main-info {
-    display: flex;
     background-image: url(../img/top-view-of-desk-top-with-notebook-and-scissors.jpg);
-    justify-content: center;
-    text-align: center;
-    grid-area: zona1;
-    place-items: center;
     background-size: cover;
+    display: flex;
+    grid-area: zona1;
+    justify-content: center;
     padding: 1em 0;
+    place-items: center;
+    text-align: center;
 }
 
 .main-text {
-    display: flex;
-    flex-direction: column;
     border: 4px solid;
     border-image: $borde_uno;
-    width: 70%;
+    display: flex;
+    flex-direction: column;
     padding: 7%;
+    width: 70%;
 
     h1 {
         font-size: 1.8rem;
@@ -108,28 +108,28 @@ main {
 }
 
 .cards {
-    display:flex;
-    place-content: center;
-    grid-area: zona2;
-    flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-
+    display:flex;
+    flex-direction: column;
+    grid-area: zona2;
+    justify-content: space-evenly;
+    place-content: center;
+    
     .carta {
+        align-items: center;
+        border: 4px solid;
+        border-image: $borde_uno;
         display:flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        text-align: center;
-        border: 4px solid;
-        padding: 1em;
-        border-image: $borde_uno;
         height: 30%;
+        justify-content: space-evenly;
+        padding: 1em;
+        text-align: center;
         width: 70%;
 
         &__img {
-            width:40%;
             height: 40%;
+            width:40%;
         }
     
         &__texto {
@@ -140,48 +140,48 @@ main {
 
 /* Index - Feedback */
 .feedback {
-    display: flex;
-    flex-direction: column;
-    text-align:center;
+    align-items: center;
     border: 4px solid;
     border-image: $borde_uno;
+    display: flex;
+    flex-direction: column;
     grid-area: zona3;
     justify-content: space-evenly;
-    align-items: center;
-    width: 70%;
     margin: 1em auto;
+    text-align:center;
+    width: 70%;
 
     .feedback-h2 {
         padding: 1em 0 .5em;
     }
 
     .feedback-opiniones {
+        align-items: center;
         display: flex;
         flex-direction:column;
-        justify-content: space-evenly;
-        align-items: center;
         gap: 10%;
+        justify-content: space-evenly;
         text-align: center;
         
         .feedback-card {
             display:flex;
             flex-direction: column;
-            width: 70%;
             gap:1rem;
             padding: 15px;
+            width: 70%;
         }
     }
 }
 
 /* Estilo general de Nosotros */
 .banner {
-    grid-area: zona1;
-    width:100%;
-    height: 150px;
     background-image: url(../img/concept-or-composition-of-hygge-with-different-accessories.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    grid-area: zona1;
+    height: 150px;
+    width:100%;
 }
 
 .nosotros-main {
@@ -189,13 +189,13 @@ main {
 }
 
 .nosotros-info {
+    border: 4px solid;
+    border-image: $borde_uno;
     display: flex;
     flex-direction: column;
     grid-area: zona2;
-    width: 85%;
-    border: 4px solid;
     padding: 1rem;
-    border-image: $borde_uno;
+    width: 85%;
 
     h1 {
         margin-bottom: 1.1em;
@@ -207,28 +207,28 @@ main {
 }
 
 .ubicacion-info {
-    grid-area: zona3;
-    width: 85%;
     border: 4px solid;
-    padding: 1rem;
     border-image: $borde_uno;
+    grid-area: zona3;
+    padding: 1rem;
+    width: 85%;
 }
 
 .ubicacion-map {
     grid-area: zona4;
-    width: 90%;
     height: 80%;
     offset-block-end: 15px;
+    width: 90%;
 }
 
 /* Producto */
 .productos-h1 {
-    grid-area: zona1;
     display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 2em 0;
     font-family: $fuente_uno;
+    grid-area: zona1;
+    justify-content: center;
+    margin: 2em 0;
+    text-align: center;
 }
 
 .dibujo {
@@ -237,9 +237,9 @@ main {
 
 .producto__item {
     &__img {
-        width:100%;
-        transition:all 1s;
         border: solid transparent 8px;
+        transition:all 1s;
+        width:100%;
     }
     
     &__img:hover {
@@ -273,15 +273,15 @@ main {
 .anotadores {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    width: 70%;
-    gap: 1.5em;    
+    gap: 1.5em;  
+    margin: 0 auto; 
+    width: 70%; 
 }
 
 /* Estilo de la galeria */
 .galeria-h1 {
-    text-align: center;
     margin: 1em 0;
+    text-align: center;
 }
 
 .galeria {
@@ -290,8 +290,8 @@ main {
     place-items: center;
 
     &__item {
+        margin: 1em;
         max-width:70%;
-        margin: 1em ;
         overflow: hidden;
     }
 
@@ -301,94 +301,95 @@ main {
     }
 
     &__item-animation{
-        width: 100%;
+        filter: grayscale(100%);
         height: 100%;
         object-fit:cover;
         transition: ease-in-out 1.5s;
-        filter: grayscale(100%);
+        width: 100%;
     }
     
     &__item-animation:hover {
-        transform: scale(1.2);
         filter: grayscale(0);
+        transform: scale(1.2);
+        
     }
 }
 
 /* Contacto */
 
 .contacto-h1 {
-    grid-area: titulo-medios;
-    text-align: center;
     font-family: $fuente_uno;
+    grid-area: titulo-medios;
     margin: auto;
+    text-align: center;
 }
 
 .form-h2 {
+    font-family: $fuente_uno;
     grid-area: titulo-form;
     text-align: center;
-    font-family: $fuente_uno;
 }
 
 .contenedor-formulario {
     grid-area: formulario;
     justify-self: center;
-    width: 70%;
     margin-top: 10%;
+    width: 70%;
 }
 
 form {
     label {
-        line-height: 40px;
         font-family: $fuente_dos;
+        line-height: 40px;
     }
 
     input {
-    transition:all .2s;
+        transition:all .2s;
     }
 
     input:hover {
-    background-color: rgb(244, 246, 239);
-    border:2px solid black;
-    border-image: $borde_uno;
+        background-color: rgb(244, 246, 239);
+        border:2px solid black;
+        border-image: $borde_uno;
     }
 
     input:focus {
-    background-color: rgb(244, 246, 239);
-    border:4px solid;
-    border-image: $borde_uno;
+        background-color: rgb(244, 246, 239);
+        border:4px solid;
+        border-image: $borde_uno;
     }
 
     textarea:hover {
-    background-color: rgb(244, 246, 239);
-    border:2px solid black;
-    border-image: $borde_uno;
+        background-color: rgb(244, 246, 239);
+        border:2px solid black;
+        border-image: $borde_uno;
     }
 
     textarea:focus {
-    background-color: rgb(244, 246, 239);
-    border: 4px solid black;
-    border-image: $borde_uno;    
+        background-color: rgb(244, 246, 239);
+        border: 4px solid black;
+        border-image: $borde_uno;    
     }
 }
 
 .contacto-cards {
-    grid-area: medios;
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: 2%;
+    grid-area: medios;
     justify-content: space-evenly;
-    align-items: center;
-
+    
     .contacto-cards-item {
+        align-items: center;
+        background-image: linear-gradient(rgb(244, 244, 234), rgb(224, 244, 224));
+        border: 4px solid;
+        border-image: $borde_uno;
         display:flex;
         flex-direction:column;
         justify-content: space-evenly;
-        align-items: center;
-        border: 4px solid;
-        padding: 1em;
-        border-image: $borde_uno;
-        background-image: linear-gradient(rgb(244, 244, 234), rgb(224, 244, 224));
         height: 27%;
+        padding: 1em;
         width: 80%;
     }
 
@@ -398,27 +399,27 @@ form {
 }
 
 footer {
-    display: flex;
-    grid-area: footer;
-    flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    padding-top:5%;
+    display: flex;
+    flex-direction: column;
+    grid-area: footer;
+    justify-content: space-evenly;
     margin-bottom: 50px;
-
+    padding-top:5%;
+    
     nav {
         display: flex;
 
         ul {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
             column-gap: .5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         li {
-        text-decoration: none;
-        color:black;
+            color:black;
+            text-decoration: none;
         }
 
         li:hover {

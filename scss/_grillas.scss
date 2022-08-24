@@ -14,37 +14,25 @@
                          "footer";
     grid-template-rows:  100px auto 218px;
 }
-
+/* Practicando @extend */
 #layout-nos-container {
-    display: grid;
-    grid-template-areas: "header"
-                         "main"
-                         "footer";
+    @extend #layout-container;
     grid-template-rows:  100px auto 218px;
 }
 
 #layout-prod-container {
-    display: grid;
-    grid-template-areas: "header"
-                         "main"
-                         "footer";
+    @extend #layout-container;
     grid-template-rows:  100px auto 218px;
 }
 
 #layout-galeria {
-    display: grid;
-    grid-template-areas: "header"
-                         "main"
-                         "footer";
+    @extend #layout-container;
     grid-template-columns: auto;
     grid-template-rows:  100px auto 200px;
 }
 
 #layout-contacto {
-    display: grid;
-    grid-template-areas: "header"
-                         "main"
-                         "footer";
+    @extend #layout-container;
     grid-template-rows:  100px auto 218px;
 }
 
