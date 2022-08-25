@@ -81,7 +81,7 @@ main {
   border-image: linear-gradient(135deg, turquoise, greenyellow) 1;
   padding: 7%;
   width: 70%;
-  max-width: 90%; }
+  max-height: 90%; }
   .main-text h1 {
     font-size: 1.8rem; }
   .main-text p {
