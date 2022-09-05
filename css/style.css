@@ -68,7 +68,7 @@ main {
   align-items: center;
   text-align: center;
   background-image: url(../img/image.png);
-  background-size: cover;
+  background-size: contain;
   padding: 1em 0; }
 
 .main-text {

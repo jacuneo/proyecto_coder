@@ -87,7 +87,7 @@ main {
     grid-area: zona1;
     @include flexi (flex , row , center , center, center );
     background-image: url(../img/image.png);
-    background-size: cover;
+    background-size:contain;
     padding: 1em 0;
 }
 
