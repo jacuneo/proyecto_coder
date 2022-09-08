@@ -87,25 +87,25 @@ main {
     grid-area: zona1;
     @include flexi (flex , row , center , center, center );
     background-image: url(../img/image.png);
-    background-size:contain;
+    background-size:cover;
     padding: 1em 0;
-}
 
-.main-text {
-    @include flexi (flex , column , center , center, center );
-    border: 4px solid;
-    border-image: $borde_uno;
-    padding: 7%;
-    width: 70%;
-    max-height: 90%;
+    .main-text {
+        @include flexi (flex , column , center , center, center );
+        border: 4px solid;
+        border-image: $borde_uno;
+        padding: 7%;
+        width: 70%;
+        max-height: 90%;
 
-    h1 {
-        font-size: 2.8rem;
-    }
+        h1 {
+            font-size: 2.8rem;
+        }
 
-    p {
-        margin: 1%;
-        font-size: 1.2rem;
+        p {
+            margin: 1%;
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -154,6 +154,10 @@ main {
             gap:1rem;
             padding: 15px;
             width: 70%;
+
+            .feedback-autor {
+                font-style: italic;
+            }
         }
     }
 }
@@ -161,10 +165,8 @@ main {
 /* Estilo general de Nosotros */
 .banner {
     grid-area: zona1;
-    background-image: url(../img/concept-or-composition-of-hygge-with-different-accessories.webp);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url(../img/flat-lay-notepad-template-with-tea-concept.webp);
+    background-size: contain;
     height: 150px;
     width:100%;
 }
@@ -335,7 +337,7 @@ form {
 
     input:focus {
         background-color: rgb(244, 246, 239);
-        border:4px solid;
+        border:4px solid black;
         border-image: $borde_uno;
     }
 
@@ -353,21 +355,14 @@ form {
 }
 
 .contacto-cards {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    @include flexi (flex , column , space-evenly , center, center );
     gap: 2%;
     grid-area: medios;
-    justify-content: space-evenly;
     
     .contacto-cards-item {
-        align-items: center;
-        background-image: linear-gradient(rgb(244, 244, 234), rgb(224, 244, 224));
+        @include flexi (flex , column , space-evenly , center, center );
         border: 4px solid;
         border-image: $borde_uno;
-        display:flex;
-        flex-direction:column;
-        justify-content: space-evenly;
         height: 27%;
         padding: 1em;
         width: 80%;
@@ -379,11 +374,8 @@ form {
 }
 
 footer {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    @include flexi (flex , column , space-evenly , center, center );
     grid-area: footer;
-    justify-content: space-evenly;
     margin-bottom: 50px;
     padding-top:5%;
     

@@ -67,15 +67,16 @@
     }
 
     /* Index para >600px */
-    .main-text {
-        backdrop-filter: blur(8px);
-        justify-content: center;
-        padding: 10%;
+    .main-info {
+        .main-text {
+            justify-content: center;
+            padding: 10%;
+        }
     }
 
     .cards {
         flex-direction: row;
-
+        
         .carta {
             height: 90%;
             width: 30%;
@@ -85,13 +86,13 @@
     .feedback {
         margin:auto;
         width: 95%;
-        
+
         .feedback-opiniones {
             flex-direction: row;
             justify-content: space-around;
             margin-block: 2em;
             padding: 1em;
-            
+
             .feedback-card {
                 width: 35%;
             }
@@ -100,7 +101,8 @@
 
     /* Nosotros*/
     .banner {
-        background-image: url(../img/flat-lay-notepad-template-with-tea-concept.webp);
+        background-size: cover;
+        background-position: center;
         grid-area: a1;
         height: 90%;
         width:90%;
