@@ -29,8 +29,7 @@ header {
     display: flex; }
   header li {
     color: black;
-    padding: .5rem;
-    text-decoration: none; }
+    padding: .5rem; }
   header a,
   header a:hover {
     color: black;
@@ -44,7 +43,9 @@ header {
     gap: 2em;
     padding: 0 1em; }
   header nav li {
-    transition: all .6s; }
+    transition: all .6s;
+    font-family: "Sacramento", cursive;
+    font-size: 2rem; }
   header nav li:hover {
     background-color: turquoise;
     color: greenyellow;

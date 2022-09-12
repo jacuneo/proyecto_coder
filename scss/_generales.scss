@@ -40,13 +40,15 @@ header {
     li {
         color:black;
         padding:.5rem;
-        text-decoration: none;
+        
+
     }
 
     a,
     a:hover {
         color:black;
         text-decoration: none;
+        
     }
 
     nav {
@@ -57,6 +59,8 @@ header {
 
     nav li {
         transition:all .6s;
+        font-family: $fuente_tres;
+        font-size:2rem;
     }
 
     nav li:hover {
